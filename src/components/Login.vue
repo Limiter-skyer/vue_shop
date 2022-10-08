@@ -81,7 +81,7 @@ export default {
       this.$refs.loginFormRef.validate(async (valid) => {
         if (!valid) return
         const { data: result } = await this.$http.post('login', this.loginForm) // 结构赋值，把返回的Promise对象中的data属性，单独拉出来赋值给result
-        console.log(result)
+        // console.log(result)
         if (result.meta.status !== 200) return this.$message.error('登录失败')
         this.$message.success('登录成功')
         // 登录成功之后需要执行的业务：1.保存token，2.跳转到其他页面
